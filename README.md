@@ -1,6 +1,12 @@
-# CrCart
+# CR CART
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
+Projeto desenvolvido para o processo seletivo da [Consulta Remédios](https://consultaremedios.com.br/).
+Desenvolvido em Angular 8
+
+
+## Link para descrição do desafio
+
+[Consulta remédios frontend challange](https://github.com/ConsultaRemedios/frontend-challenge).
 
 ## Development server
 
