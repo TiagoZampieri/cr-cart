@@ -1,0 +1,112 @@
+.cart-container {
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E1E1E1;
+  border-radius: 3px;
+
+  .cart-header .title{
+    font-size: 18px;
+    color: #363636;
+    font-weight: bold;
+    span {
+      font-size: 14px;
+      color: #7F7575;
+      font-weight: normal;
+    }
+  }
+
+  .product-list {
+    display: flex;
+    flex-direction: column;
+
+    .product-item {
+      display: flex;
+      position: relative;
+      .product-thumb {
+        flex-shrink: 1;
+        background: #EEEEEE;
+        border-radius: 3px;
+        padding: 6px 10px;
+        img{
+          width: 42px;
+        }
+      }
+      .product-desc {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px;
+
+        .title, .price {
+          font-size: 14px;
+        }
+
+        .title {
+          color: #7F7575;
+        }
+
+        .price {
+          color: #423B3B;
+          font-weight: bold;
+        }
+      }
+
+      button.remove-product{
+        visibility: hidden;
+        position: absolute;
+        background: #54A3FF;
+        border-radius: 100%;
+        border: none;
+        color: #fff;
+        right: 0;
+        top: 10px;
+        height: 24px;
+        i.material-icons {
+          font-size: 12px;
+        }
+      }
+
+      &:hover button.remove-product{
+        visibility: visible;
+      }
+    }
+  }
+
+  .cart-desc {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        margin: 16px 0;
+      }
+
+      span:first-child {
+        font-size: 14px;
+        color: #7F7575;
+      }
+
+      span:last-child {
+        font-size: 16px;
+        font-weight: bold;
+        color: #423B3B;
+      }
+    }
+  }
+
+  button.checkout {
+    background: #54A3FF;
+    padding: 16px;
+    border: 0;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+  }
+}
