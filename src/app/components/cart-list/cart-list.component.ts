@@ -13,6 +13,7 @@ export class CartListComponent implements OnInit {
   @Output() removeFromCart = new EventEmitter();
 
   cartProducts$: Observable<Product[]>;
+  calc;
   cartSubscribe;
 
   constructor(
@@ -21,8 +22,6 @@ export class CartListComponent implements OnInit {
 
   ngOnInit() {
     this.cartProducts$ = this.productService.getCartProducts();
-    this.calcValue();
-
   }
 
   removeProduct(id: number) {
@@ -30,13 +29,15 @@ export class CartListComponent implements OnInit {
   }
 
   calcValue() {
-    let calcTotal = 0;
-    this.cartProducts$.subscribe(res => {
-      res.map(prod => calcTotal += prod.price);
-      console.log('total ->', calcTotal);
+    let total = 10.00;
+    this.calc = this.productService.getCartProducts().subscribe({
+      next(el: Product[]) {
+        el.forEach(prod => {
+          total += prod.price;
+        });
+      }
     });
-
-    return calcTotal;
+    return total;
   }
 
 }

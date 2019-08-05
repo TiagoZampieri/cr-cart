@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductService } from 'src/app/api/product.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ProductService } from 'src/app/api/product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  products$: Product[];
+  products$: Observable<Product[]>;
   cartProducts: Product[] = [];
 
   constructor(

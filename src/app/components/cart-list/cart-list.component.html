@@ -15,7 +15,7 @@
       <div class="cart-desc">
         <div class="subtotal">
           <span>subtotal</span>
-          <span>R$49,99</span>
+          <span>{{ calcValue() - 10.00 }}</span>
         </div>
         <div class="frete">
             <span>frete</span>
@@ -23,7 +23,7 @@
         </div>
         <div class="total">
             <span>total</span>
-            <span>R$59,99</span>
+            <span>{{ calcValue() }}</span>
         </div>
       </div>
       <button class="checkout">
