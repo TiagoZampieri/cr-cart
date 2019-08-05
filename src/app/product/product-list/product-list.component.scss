@@ -20,6 +20,14 @@
     .list-items {
       display: flex;
       flex-wrap: wrap;
+
+      cr-product-card {
+        width: 30%;
+
+        &:not(:last-child) {
+         margin-right: 30px;
+        }
+      }
     }
   }
 
