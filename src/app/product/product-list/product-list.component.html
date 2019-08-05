@@ -7,10 +7,10 @@
       </select>
     </div>
     <div class="list-items">
-      <cr-product-card *ngFor="let item of products" [productData]="item" (addToCart)="addToCart($event)"></cr-product-card>
+      <cr-product-card *ngFor="let item of products$ | async" [productData]="item" (addToCart)="addToCart($event)"></cr-product-card>
     </div>
   </div>
   <div class="cart-section">
-    <cr-cart-list [cartProducts]="cartProducts" (removeFromCart)="removeFromCart($event)"></cr-cart-list>
+    <cr-cart-list></cr-cart-list>
   </div>
 </div>

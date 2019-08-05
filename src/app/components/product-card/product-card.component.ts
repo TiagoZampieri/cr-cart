@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ProductService } from 'src/app/api/product.service';
 
 @Component({
   selector: 'cr-product-card',
@@ -11,13 +12,15 @@ export class ProductCardComponent implements OnInit {
   @Output() addToCart = new EventEmitter();
 
 
-  constructor() { }
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit() {
   }
 
   addProduct(product: Product) {
-    this.addToCart.emit(product);
+    this.productService.adToCart(product);
   }
 
 }

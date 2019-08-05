@@ -1,4 +1,7 @@
+import { map } from 'rxjs/operators';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ProductService } from 'src/app/api/product.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cr-cart-list',
@@ -7,16 +10,33 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CartListComponent implements OnInit {
 
-  @Input() cartProducts: Product[];
   @Output() removeFromCart = new EventEmitter();
 
-  constructor() { }
+  cartProducts$: Observable<Product[]>;
+  cartSubscribe;
+
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit() {
+    this.cartProducts$ = this.productService.getCartProducts();
+    this.calcValue();
+
   }
 
   removeProduct(id: number) {
     this.removeFromCart.emit(id);
+  }
+
+  calcValue() {
+    let calcTotal = 0;
+    this.cartProducts$.subscribe(res => {
+      res.map(prod => calcTotal += prod.price);
+      console.log('total ->', calcTotal);
+    });
+
+    return calcTotal;
   }
 
 }

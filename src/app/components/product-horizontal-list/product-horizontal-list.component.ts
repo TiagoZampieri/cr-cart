@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ProductService } from 'src/app/api/product.service';
 
 @Component({
   selector: 'cr-product-horizontal-list',
@@ -8,15 +9,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ProductHorizontalListComponent implements OnInit {
 
   @Input() productData: Product;
-  @Output() removeFormCart = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit() {
   }
 
   removeProduct(id: number) {
-    this.removeFormCart.emit(id);
+    this.productService.remvoeFromCart(id);
   }
 
 }
