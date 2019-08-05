@@ -1,14 +1,14 @@
 <ng-container>
   <div class="card">
     <div class="card-thumb">
-      <img src="assets/games-thumbs/call-of-duty-infinite-warfare.png">
+      <img [src]="productData.image">
     </div>
     <div class="card-desc">
-      <span class="name">Call of Duty</span>
-      <span class="price">R$ 22,00</span>
+      <span class="name">{{ productData.name }}</span>
+      <span class="price">{{ productData.price }}</span>
     </div>
     <div class="add-to-cart">
-      <button>adicionar ao carinho</button>
+      <button (click)="addProduct(productData)">adicionar ao carinho</button>
     </div>
   </div>
 </ng-container>

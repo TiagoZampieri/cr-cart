@@ -1,13 +1,13 @@
 <ng-container>
   <div class="product-item">
     <div class="product-thumb">
-      <img src="assets/games-thumbs/call-of-duty-infinite-warfare.png" alt="">
+      <img [src]="productData.image" alt="">
     </div>
     <div class="product-desc">
-      <span class="title">Call of duty</span>
-      <span class="price">49,99</span>
+      <span class="title">{{ productData.name }}</span>
+      <span class="price">{{ productData.price }}</span>
     </div>
-    <button class="remove-product">
+    <button class="remove-product" (click)="removeProduct(productData.id)">
       <i class="material-icons mdi mdi-16">close</i>
     </button>
   </div>

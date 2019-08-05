@@ -6,6 +6,17 @@
   border: 1px solid #E1E1E1;
   border-radius: 3px;
 
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #746A6A;
+
+    p {
+      text-align: center;
+    }
+  }
+
   .cart-header .title{
     font-size: 18px;
     color: #363636;

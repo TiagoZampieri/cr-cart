@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'cr-cart-list',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartListComponent implements OnInit {
 
+  @Input() cartProducts: Product[];
+  @Output() removeFromCart = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  removeProduct(id: number) {
+    this.removeFromCart.emit(id);
   }
 
 }
