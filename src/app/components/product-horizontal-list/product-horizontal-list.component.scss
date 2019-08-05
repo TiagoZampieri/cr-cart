@@ -1,6 +1,7 @@
 .product-item {
   display: flex;
   position: relative;
+  margin-bottom: 10px;
   .product-thumb {
     flex-shrink: 1;
     background: #EEEEEE;
@@ -34,8 +35,7 @@
   button.remove-product{
     visibility: hidden;
     position: absolute;
-    background: #54A3FF;
-    border-radius: 100%;
+    background: none;
     border: none;
     color: #fff;
     right: 0;
@@ -43,6 +43,10 @@
     height: 24px;
     i.material-icons {
       font-size: 12px;
+      background: #54A3FF;
+      border-radius: 100%;
+      padding: 3px;
+      cursor: pointer;
     }
   }
 

@@ -1,12 +1,12 @@
 <ng-container>
   <div class="cart-container">
     <div class="empty-state" *ngIf="(cartProducts$ | async).length === 0">
-        <i class="material-icons mdi mdi-16">account</i>
+      <i class="material-icons">add_shopping_cart</i>
         <p>Até o momento, o seu carrinho está vazio</p>
     </div>
     <div class="cart-products" *ngIf="(cartProducts$ | async).length > 0">
       <div class="cart-header">
-        <h3 class="title">Carrinho <span>(3 itens)</span></h3>
+        <h3 class="title">Carrinho <span>({{ (cartProducts$ | async).length }} item(s))</span></h3>
       </div>
       <div class="product-list">
         <cr-product-horizontal-list *ngFor="let item of cartProducts$ | async" [productData]="item">

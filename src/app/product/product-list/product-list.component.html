@@ -7,7 +7,7 @@
       </select>
     </div>
     <div class="list-items">
-      <cr-product-card *ngFor="let item of products$ | async" [productData]="item" (addToCart)="addToCart($event)"></cr-product-card>
+      <cr-product-card *ngFor="let item of products$ | async" [productData]="item"></cr-product-card>
     </div>
   </div>
   <div class="cart-section">
