@@ -43,3 +43,25 @@
     margin-top: 45px;
   }
 }
+
+
+@media (max-width: 420px) {
+  .list-container {
+    flex-direction: column;
+
+    .list-header {
+      flex-direction: column;
+
+      select {
+        margin-bottom: 10px;
+      }
+    }
+
+    .list-items {
+      flex-direction: column;
+      cr-product-card.list-item.item {
+        width: 100%;
+      }
+    }
+  }
+}
